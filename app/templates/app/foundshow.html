@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>showPage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}" />
+</head>
+<body>
+  <table>
+    <th align="left"><img src="{% static 'app/logo2.png' %}" alt="My image" style="width:40%; height:40%" ></th>
+    <th ></th>
+  </table>
+ <hr style="height:1.5px;border-width: 0;color:black;background-color:black;">
+ <div class="navbar">
+<a href="{% url 'home' %}"><b>Home</b></a>
+
+<div class="dropdown">
+<button class="dropbtn"><b>Account</b>
+  
+</button>
+<div class="dropdown-content">
+  <a href="{% url 'profile' %}">Profile</a>
+  <a href="{% url 'logoutRequest' %}">logout</a>
+
+</div>
+</div> 
+</div>
+<div class="container">
+  <center><h2>Items Found</h2></center>
+     
+  <table class="table table-bordered" style="border: 1px solid black">
+   
+    {% if key1 %}
+  
+        <tbody>
+      
+        {% for i in key1 %}
+      <tr><td style="border:none;">ID: {{i.id}}</td></tr>
+      <tr><td style="border:none;">Fullname: {{i.Fullname}}</td></tr>
+      <tr><td style="border:none;">Email: {{i.Email}}</td></tr>
+      <tr><td style="border:none;">Contact: {{i.Contact}}</td></tr>
+      <tr><td style="border:none;">Place where the Item is found: {{i.Foundplace}}</td></tr>
+      <tr><td style="border:none;">Date on which the Item is found: {{i.Foundon}}</td></tr>
+      <tr><td style="border:none;"><img src="{{MEDIA_URL}}{{i.Image.url}}" width="100px" height="100px"></td></tr>
+      <tr><td style="border:none;"><hr style="height:1.7px;border: width 1px;color:black;background-color:black;"></td></tr>
+
+      
+      
+      {% endfor %}
+      
+    
+    </tbody>
+  
+    
+    {% endif %}
+
+  </table>
+  
+</div>
+
+</body>
+</html>

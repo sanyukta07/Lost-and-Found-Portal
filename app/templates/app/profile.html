@@ -1,0 +1,62 @@
+<html>
+<head>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}" />
+
+</head>
+<body>
+  <table>
+    <th align="left"><img src="{% static 'app/logo2.png' %}" alt="My image" style="width:40%; height:40%" ></th>
+    <th ></th>
+  </table>
+ <hr style="height:1.5px;border-width: 0;color:black;background-color:black;">
+ <div class="navbar">
+<a href="{% url 'home' %}"><b>Home</b></a>
+
+<div class="dropdown">
+<button class="dropbtn"><b>Account</b>
+  
+</button>
+<div class="dropdown-content">
+  <a href="{% url 'profile' %}">Profile</a>
+  <a href="{% url 'logoutRequest' %}">logout</a>
+
+</div>
+</div> 
+</div>
+      <center><h3>{{msg}}</h3></center>
+      <center><h2>My Profile</h2></center><center>
+      <table class="table table-bordered" >
+   
+        {% if key1 %}
+        <tbody>
+            {% for i in key1 %}
+          <tr><td>Id: {{i.id}}</td></tr>
+            <tr><td>Fullname: {{i.Fullname}}</td></tr>
+           <tr> <td>Email: {{i.Email}}</td></tr>
+           <tr> <td>Contact: {{i.Contact}}</td></tr>
+           <tr> <td>Course: {{i.Course}}</td></tr>
+           <tr> <td>Password: {{i.Password}}</td></tr>
+           <tr></tr>
+           <tr><td>
+            <form name="EditForm" action="{% url 'editprofilepage' pk=i.id %}" method="post">
+              {% csrf_token %}
+              <input type="submit" value="Edit" class="button">
+            </form>
+  
+        </td></tr>
+          
+          {% endfor %}
+        </tbody>
+        {% endif %}
+      </table>
+            </center>
+            
+          
+        <center>
+        <button class="button" type="submit"><a href="{% url 'lostProfile' %}">View reported lost items</a></button>
+        <button class="button" type="submit"><a href="{% url 'foundProfile' %}">View Reported found items</a></button>
+      </center>
+     
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <th align="left"><img src="{% static 'app/logo2.png' %}" alt="My image" style="width:40%; height:40%" ></th>
+        <th ></th>
+      </table>
+     <hr style="height:1.5px;border-width: 0;color:black;background-color:black;">
+     <div class="navbar">
+    <a href="{% url 'home' %}"><b>Home</b></a>
+    
+    <div class="dropdown">
+    <button class="dropbtn"><b>Account</b>
+      
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'profile' %}">Profile</a>
+      <a href="{% url 'logoutRequest' %}">logout</a>
+    
+    </div>
+    </div> 
+    </div>
+        <form action="{% url 'insert' %}" method="post">
+            {% csrf_token %}
+            <center>
+                <h1>Insert Form</h1>>
+            <table>
+                <tr>
+                    <td>Firstname </td>
+                    <td><input type="text" name="fname" id=""></td>
+                </tr>
+                <tr>
+                    <td>LastName </td>
+                    <td><input type="text" name="lname" id=""></td>
+                </tr>
+                <tr>
+                    <td>Email </td>
+                    <td><input type="email" name="email" id=""></td>
+                </tr>
+                <tr>
+                    <td>Contact </td>
+                    <td><input type="tel" name="contact" id=""></td>
+                </tr>
+                <tr>
+                    
+                    <td><input type="submit" value="Insert"></td>
+                </tr>
+
+                </table>
+                </center>
+
+        </form>
+        
+</body>
+</html>  

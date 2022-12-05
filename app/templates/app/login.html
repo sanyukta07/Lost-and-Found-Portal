@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}" />
+
+
+
+</head>
+<body>
+  <table>
+    <th align="left"><img src="{% static 'app/logo2.png' %}" alt="My image" style="width:40%; height:40%" ></th>
+    <th ></th>
+  </table>
+ <hr style="height:1.5px;border-width: 0;color:black;background-color:black;">
+
+    <center><h3>{{msg}}</h3></center>
+    <br><br>
+    
+   <center> <div class="box" ><br><br>
+ 
+      <form action="{% url 'loginuser' %}" method="post">  
+        {% csrf_token %} 
+          <div class="container">
+          
+                 <b>Email:</b>
+             
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="email" type="email" placeholder="Enter registered email id" name="email" >
+              <br>
+              <br>
+           <b>Password:</b>            
+                  <input id="textbox" type="password" placeholder="Enter Password" name="password" required>
+           <br><br><br>
+                  <button class="button" type="submit">Login</button>
+             <br><br>
+          &nbsp;<a href="{% url 'register' %}">
+            <input class="button" type="button" value="Register" ></a>
+       
+          </div>
+        </form>
+    
+   </div></center>
+</body>
+</html>

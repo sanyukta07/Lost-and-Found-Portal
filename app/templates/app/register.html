@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}" />
+
+    
+</head>
+<body > 
+    <table>
+        <th align="left"><img src="{% static 'app/logo2.png' %}" alt="My image" style="width:40%; height:40%" ></th>
+        <th ></th>
+      </table>
+     <hr style="height:1.5px;border-width: 0;color:black;background-color:black;">
+     
+     <h3 style="text-align: center;">{{msg}}</h3>
+      <center> 
+         <div class="box">
+        
+      <table>
+        <form action="{% url 'register1' %}" method="POST">
+            {% csrf_token %}
+            
+        <caption style="font-weight:bold; font-size: 25px;">Registration Form</caption><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+        <tr>
+            <td style="font-weight: bold;">Fullname: </td>
+            <td><input type="text" placeholder="Enter full name" name="fname"></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Email: </td>
+            <td><input type="email" placeholder="Enter email address" name="email"></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Contact no: </td>
+            <td><input type="tel" placeholder="Enter contact no" name="contact"></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Course </td>
+            <td><input type="text" placeholder="Enter your course" name="course"></td>
+        </tr>
+      
+        <tr>
+            <td style="font-weight: bold;">password: </td>
+            <td><input type="password" placeholder="Enter password" name="passw"></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">confirm password: </td>
+            <td><input type="password" placeholder="re-enter password" name="cpass"></td>
+        </tr>
+        <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+        <tr><td colspan="2" align="center">
+            
+            <button class="button" type="submit">register</button>
+            <td>
+        </tr>
+
+        </form>
+        </table>
+      </div>
+    </center>
+</body>
+</html>

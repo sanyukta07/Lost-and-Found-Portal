@@ -1,0 +1,90 @@
+<!-- Insert found data- form -->
+<html>
+<head>
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}" />
+
+</head>
+<body>
+
+    <table>
+        <th align="left"><img src="{% static 'app/logo2.png' %}" alt="My image" style="width:40%; height:40%" ></th>
+        <th ></th>
+      </table>
+     <hr style="height:1.5px;border-width: 0;color:black;background-color:black;">
+     <div class="navbar">
+    <a href="{% url 'home' %}"><b>Home</b></a>
+    
+    <div class="dropdown">
+    <button class="dropbtn"><b>Account</b>
+      
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'profile' %}">Profile</a>
+      <a href="{% url 'logoutRequest' %}">logout</a>
+    
+    </div>
+    </div> 
+    </div>
+     <center>
+     {% if key2 %}
+     <form action="{% url 'updatefound' pk=key2.id %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+     
+          <h1 style="float:center;margin-left :-50px;">Report Found Item</h1>
+      <table>
+        <div class="td">
+          <tr>
+              <td style="font-weight:bold;">Full Name: </td>
+              <td><input type="text" name="fname" id="" value="{{key2.Fullname}}"></td>
+          </tr>
+          <tr></tr>
+         
+          <tr>
+              <td style="font-weight:bold;">Email: </td>
+              <td><input type="email" name="email" id="" value="{{key2.Email}}"></td>
+          </tr>
+          <tr></tr>
+          <tr>
+              <td style="font-weight:bold;">Contact:</td>
+              <td><input type="tel" name="contact" id="" value="{{key2.Contact}}"></td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td style="font-weight:bold;">Place where the item is found: </td>
+          <td><input type="text" name="placefound" id="" value="{{key2.Foundplace}}"></td>
+
+        </tr>
+        <tr></tr>
+        <tr>
+          <td style="font-weight:bold;">Date when found the item: </td>
+          <td><input type="date" name="date" id="" value="{{key2.Foundon}}"></td>
+      </tr>
+      <tr></tr>
+        <tr>
+          <td style="font-weight:bold;">Image: </td>
+          <td><input type="file" name="image" id="" value="{{key2.Image}}"></td>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+          <tr>
+              
+              <td align="right"><button type="submit" ><b>Submit</b></button></td>
+          </tr>
+          <tr></tr>
+          <tr></tr>
+          
+          </div>
+
+          </table>
+         
+          
+         
+
+  </form>
+  {% endif %}
+  
+</center>
+		
+</body>
+</html>s

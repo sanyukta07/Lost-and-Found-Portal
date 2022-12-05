@@ -1,0 +1,117 @@
+
+      body {
+        background-image: url("{% static 'app/i2.png' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      
+      
+      }
+      .box{
+        margin-top: 10px;
+        width: 350px;
+        height: 300px;
+        border: none;
+        box-shadow: 5px 5px 10px 10px gray;
+        }
+    
+
+        .td{
+            color:rgb(75, 75, 75);
+       
+        }
+        .button {
+            border: 5px solid #0A3D5B;
+            box-shadow:  5px 5px gray;
+            background-color: transparent;
+            color: #3b3c3d;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background: transparent;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 7px;
+            margin-bottom: 7px;
+            border-radius: 3px;
+            text-transform: capitalize;
+        }
+        
+            .button {
+            background-image: linear-gradient(0, #4a4d4f, #4a4d4f);
+            background-size: 0;
+            transition: .8s;
+            background-repeat: no-repeat;
+            border: none;
+           
+        }
+        .button:hover {
+            background-size: 100%;
+            color: #fff;
+        }
+       #register {
+        border: 1px solid #0A3D5B;
+        box-shadow:  5px 5px gray;
+        background-color: none;
+        color: #3b3c3d;
+        padding: 10px 15px;
+        font-size: 15px;
+        font-weight: 100;
+        background: transparent;
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 7px;
+        margin-bottom: 7px;
+        border-radius: 3px;
+        text-transform: capitalize;
+    }
+    
+        #register {
+        background-image: linear-gradient(0, #4a4d4f, #4a4d4f);
+        background-size: 0;
+        transition: .8s;
+        background-repeat: no-repeat;
+        border: none;
+       
+    }
+    
+    #register:hover {
+        background-size: 100%;
+        color: #fff;
+    }
+  
+  b{font-size: 19px;
+  color: rgb(68, 66, 66) ;}
+  
+  #textbox{height:20px;
+  }
+
+  #button {
+    border: 5px solid #0A3D5B;
+    box-shadow:  5px 5px gray;
+    background-color: transparent;
+    color: #3b3c3d;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+
+    #button {
+    background-image: linear-gradient(0, #4a4d4f, #4a4d4f);
+    background-size: 0;
+    transition: .8s;
+    background-repeat: no-repeat;
+    border: none;
+   
+}
+#button:hover {
+    background-size: 100%;
+    color: #fff;
+}

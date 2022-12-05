@@ -1,0 +1,73 @@
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}" />
+  
+</head>
+<body>
+
+  <table>
+    <th align="left"><img src="{% static 'app/logo2.png' %}" alt="My image" style="width:40%; height:40%" ></th>
+    <th ></th>
+  </table>
+ <hr style="height:1.5px;border-width: 0;color:black;background-color:black;">
+ <div class="navbar">
+<a href="{% url 'home' %}"><b>Home</b></a>
+
+<div class="dropdown">
+<button class="dropbtn"><b>Account</b>
+  
+</button>
+<div class="dropdown-content">
+  <a href="{% url 'profile' %}">Profile</a>
+  <a href="{% url 'logoutRequest' %}">logout</a>
+
+</div>
+</div> 
+</div>
+     <form action="{% url 'insert' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <center>
+          <h2>Report Lost Item</h2>
+      <table>
+          <tr>
+              <td>Full Name  </td>
+              <td><input type="text" name="fname" id=""></td>
+          </tr>
+         
+          <tr>
+              <td>Email </td>
+              <td><input type="email" name="email" id=""></td>
+          </tr>
+          <tr>
+              <td>Contact </td>
+              <td><input type="tel" name="contact" id=""></td>
+          </tr>
+          <tr>
+            <td>Date when lost: </td>
+            <td><input type="date" name="date" id=""></td>
+        </tr>
+        <tr>
+          <td>Last seen at </td>
+          <td><input type="text" name="lastseen" id=""></td>
+      </tr>
+        <tr>
+          <td>Description </td>
+          <td><input type="text" name="desc" id=""></td>
+      </tr>
+      <tr></tr>
+          <tr>
+              <th colspan="2"><button class="button" type="submit" value="Insert">Insert</button></th>
+          </tr>
+          <tr></tr>
+          <tr></tr>
+          
+          </table>
+          <br>
+          
+          </center>
+
+  </form>
+  <center><button class="button"><a href="{% url 'show' %}">View Lost Items</a></button></center>>
+</body>
+</html>
